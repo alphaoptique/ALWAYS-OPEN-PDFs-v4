@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Always Open PDFs",
+  "version": "4.0",
+  "description": "Opens PDFs in browser when possible (stable mode).",
+
+  "permissions": ["tabs"],
+
+  "host_permissions": ["<all_urls>"],
+
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
